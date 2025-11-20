@@ -34,7 +34,7 @@ public class FileIo {
                 // Split the line into columns
                 String[] data = line.split(";");
 
-                // Make sure the line contains all expected values
+                // This makes sure that the line contains all of the expected values
                 if (data.length < 6) {
                     continue;
                 }
@@ -42,18 +42,18 @@ public class FileIo {
                 // Basic product info
                 String varenummer = data[0];
                 String navn       = data[1];
-                String enhed      = data[5];
+                String enhed      = data[5]; 
 
-                // Read the price replaces the comma with a dot
+                // This reads the price and then replaces the comma with a dot
                 double pris;
                 try {
                     pris = Double.parseDouble(data[3].replace(",", "."));
                 } catch (NumberFormatException e) {
-                    // If the price cannot be read, skip this product
+                    // If the price cannot be read then it skips this product
                     continue;
                 }
 
-                // Read the amount (also replace comma with dot)
+                // Read the amount also replace comma with dot
                 double antal;
                 try {
                     antal = Double.parseDouble(data[4].replace(",", "."));
