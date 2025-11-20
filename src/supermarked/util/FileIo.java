@@ -44,7 +44,7 @@ public class FileIo {
                 String navn       = data[1];
                 String enhed      = data[5];
 
-                // Read the price (replace comma with dot)
+                // Read the price replaces the comma with a dot
                 double pris;
                 try {
                     pris = Double.parseDouble(data[3].replace(",", "."));
